@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "153126438486",
+    "project_id": "hamro-dokan-6f4be",
+    "storage_bucket": "hamro-dokan-6f4be.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153126438486:android:07dc183e6e14a069f21df7",
+        "android_client_info": {
+          "package_name": "com.codingwitht.ecommerce.tstore_ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHhy9oCcyAs45Hm0ld58g_PpSuMBZOMlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
