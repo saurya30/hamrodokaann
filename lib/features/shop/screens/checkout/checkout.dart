@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hamro_dokan/esewa/screen/esewa_screen.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
 import '../../../../common/widgets/products/cart/billing_amount_section.dart';
+import '../../../../esewa/function/esewa.dart';
 import '../../../../routes/routes.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -108,20 +110,46 @@ class CheckoutScreen extends StatelessWidget {
       /// -- Checkout Button
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: SizedBox(
-          width: double.infinity,
-          child: ElevatedButton(
-            onPressed:
-                subTotal > 0
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            /// Checkout Button
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: subTotal > 0
                     ? () => orderController.processOrder(subTotal)
-                    : () =>
-                        TLoaders.warningSnackBar(title: TTexts.emptyCart.tr, message: TTexts.cartMessage.tr),
-            child: Obx(
-              () => Text('${TTexts.checkOut.tr} \$${checkoutController.calculateGrandTotal(subTotal).toStringAsFixed(2)}'),
+                    : () => TLoaders.warningSnackBar(
+                  title: TTexts.emptyCart.tr,
+                  message: TTexts.cartMessage.tr,
+                ),
+                child: Obx(
+                      () => Text(
+                    '${TTexts.checkOut.tr} \$${checkoutController.calculateGrandTotal(subTotal).toStringAsFixed(2)}',
+                  ),
+                ),
+              ),
             ),
-          ),
+            const SizedBox(height: TSizes.spaceBtwItems),
+
+            /// esewa
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green[500], // Customize style if needed
+                ),
+                onPressed: () {
+                  Esewa esewa = Esewa();
+                  esewa.pay();
+                },
+                child: Text('Pay via eSewa'),
+              ),
+            ),
+          ],
         ),
       ),
+
     );
   }
 }
