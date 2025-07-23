@@ -125,7 +125,7 @@ class ProductController extends GetxController {
         return largestPrice.toString();
       } else {
         // Otherwise, return a price range
-        return 'Rs $smallestPrice - Rs $largestPrice';
+        return ' $smallestPrice - Rs $largestPrice';
       }
     }
   }
