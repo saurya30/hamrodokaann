@@ -80,7 +80,10 @@ class TProductCardHorizontal extends StatelessWidget {
                           maxLines: 2,
                         ),
                         const SizedBox(height: TSizes.spaceBtwItems / 2),
-                        TBrandTitleWithVerifiedIcon(title: product.brand!.name, brandTextSize: TextSizes.small)
+                        TBrandTitleWithVerifiedIcon(
+                          title: product.brand?.name ?? 'Unknown Brand',
+                          brandTextSize: TextSizes.small,
+                        ),
                       ],
                     ),
                   ),

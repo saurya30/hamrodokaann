@@ -170,7 +170,7 @@ class ProductModel {
 
     // If no variations exist, return the simple price or sale price
     if (productType.name == ProductType.simple.name || variations!.isEmpty) {
-      return '\$${(salePrice ?? 0) > 0.0 ? salePrice : price}';
+      return 'Rs ${(salePrice ?? 0) > 0.0 ? salePrice : price}';
     } else {
       // Calculate the smallest and largest prices among variations
       for (var variation in variations!) {
@@ -192,7 +192,7 @@ class ProductModel {
         return largestPrice.toString();
       } else {
         // Otherwise, return a price range
-        return '\$$smallestPrice - \$$largestPrice';
+        return 'Rs $smallestPrice - Rs $largestPrice';
       }
     }
   }
@@ -204,7 +204,7 @@ class ProductModel {
 
     // If no variations exist, return the simple price or sale price
     if (productType.name == ProductType.simple.name || variations!.isEmpty) {
-      return '\$$price';
+      return 'Rs $price';
     } else {
       // Calculate the smallest and largest prices among variations
       for (var variation in variations!) {
@@ -228,7 +228,7 @@ class ProductModel {
         return largestPrice.toString();
       } else {
         // Otherwise, return a price range
-        return '\$$smallestPrice - \$$largestPrice';
+        return 'Rs $smallestPrice - Rs $largestPrice';
       }
     }
   }

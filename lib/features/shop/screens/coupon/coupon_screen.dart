@@ -13,7 +13,7 @@ import 'coupon_card.dart';
 class CouponScreen extends StatelessWidget {
   const CouponScreen({super.key});
 
-  final String currency = '\$';
+  final String currency = 'Rs';
 
   @override
   Widget build(BuildContext context) {

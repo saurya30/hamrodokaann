@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hamro_dokan/esewa/screen/esewa_screen.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
@@ -125,7 +124,7 @@ class CheckoutScreen extends StatelessWidget {
                 ),
                 child: Obx(
                       () => Text(
-                    '${TTexts.checkOut.tr} \$${checkoutController.calculateGrandTotal(subTotal).toStringAsFixed(2)}',
+                    '${TTexts.checkOut.tr} Rs ${checkoutController.calculateGrandTotal(subTotal).toStringAsFixed(2)}',
                   ),
                 ),
               ),
@@ -140,9 +139,25 @@ class CheckoutScreen extends StatelessWidget {
                   backgroundColor: Colors.green[500], // Customize style if needed
                 ),
                 onPressed: () {
+                  if (subTotal <= 0) {
+                    TLoaders.warningSnackBar(
+                      title: TTexts.emptyCart.tr,
+                      message: TTexts.cartMessage.tr,
+                    );
+                    return;
+                  }
+
                   Esewa esewa = Esewa();
-                  esewa.pay();
+                  esewa.pay(
+                    productId: "hamro-${DateTime.now().millisecondsSinceEpoch}",
+                    productName: "HamroDokan Checkout",
+                    productPrice: subTotal.toStringAsFixed(2),
+                    onSuccess: () {
+                      orderController.processOrder(subTotal);
+                    },
+                  );
                 },
+
                 child: Text('Pay via eSewa'),
               ),
             ),

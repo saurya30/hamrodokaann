@@ -74,7 +74,7 @@ class CategoryModel {
   /// Map JSON data to the CategoryModel with data.containsKey check
   factory CategoryModel.fromJson(String id, Map<String, dynamic> data) {
     return CategoryModel(
-      id: id,
+      id: id.isNotEmpty ? id : (data['id'] ?? ''),
       name: data.containsKey('name') ? data['name'] ?? '' : '',
       imageURL: data.containsKey('imageURL') ? data['imageURL'] ?? '' : '',
       parentId: data.containsKey('parentId') ? data['parentId'] ?? '' : '',

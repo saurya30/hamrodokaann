@@ -72,7 +72,7 @@ class CartScreen extends StatelessWidget {
                         await settingsController.fetchSettingDetails();
                         Get.to(() => const CheckoutScreen());
                       },
-                      child: Obx(() => Text('${TTexts.checkOut.tr} \$ ${controller.totalCartPrice.value}')),
+                      child: Obx(() => Text('${TTexts.checkOut.tr} Rs ${controller.totalCartPrice.value}')),
                     ),
                   ),
                 )

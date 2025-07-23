@@ -23,7 +23,7 @@ class TFormatter {
   /// Formats a numeric amount as currency in USD (default locale: en_US, symbol: $).
   /// You can customize the locale and symbol if needed.
   static String formatCurrency(double amount) {
-    return NumberFormat.currency(locale: 'en_US', symbol: '\$').format(amount);
+    return NumberFormat.currency(locale: 'en_US', symbol: 'Rs').format(amount);
     // Customize the currency locale and symbol as needed.
   }
 

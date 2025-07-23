@@ -229,14 +229,14 @@ class SearchScreen extends StatelessWidget {
                   Expanded(
                     child: TextFormField(
                       onChanged: (value) => searchController.minPrice.value = double.parse(value),
-                      decoration: const InputDecoration(hintText: '\$ Lowest'),
+                      decoration: const InputDecoration(hintText: 'Rs Lowest'),
                     ),
                   ),
                   const SizedBox(width: TSizes.spaceBtwItems),
                   Expanded(
                     child: TextFormField(
                       onChanged: (value) => searchController.maxPrice.value = double.parse(value),
-                      decoration: const InputDecoration(hintText: '\$ Highest'),
+                      decoration: const InputDecoration(hintText: 'Rs Highest'),
                     ),
                   ),
                 ],

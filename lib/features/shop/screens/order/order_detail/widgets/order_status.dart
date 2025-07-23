@@ -46,7 +46,7 @@ class OrderStatusWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(TTexts.grandTotal.tr, style: Theme.of(context).textTheme.bodyLarge),
-            Text('\$${order.totalAmount}', style: Theme.of(context).textTheme.titleSmall),
+            Text('Rs ${order.totalAmount}', style: Theme.of(context).textTheme.titleSmall),
           ],
         ),
         const SizedBox(height: TSizes.xs),
@@ -115,7 +115,7 @@ class OrderStatusWidget extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '\$${item.totalAmount}',
+                              'Rs ${item.totalAmount}',
                               style: Theme.of(context).textTheme.bodyLarge,
                             ),
                           ],
@@ -127,7 +127,7 @@ class OrderStatusWidget extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'Unit Price: \$${item.price.toStringAsFixed(1)}',
+                              'Unit Price: Rs ${item.price.toStringAsFixed(1)}',
                               style: Theme.of(context).textTheme.labelSmall,
                             ),
                             const SizedBox(width: TSizes.spaceBtwItems / 2),

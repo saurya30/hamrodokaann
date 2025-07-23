@@ -46,7 +46,7 @@ class SubCategoriesScreen extends StatelessWidget {
                   if (widget != null) return widget;
 
                   /// Record found.
-                  final subCategories = snapshot.data!;
+                  final subCategories = snapshot.data ?? [];
                   return ListView.builder(
                     shrinkWrap: true,
                     itemCount: subCategories.length,
@@ -54,7 +54,13 @@ class SubCategoriesScreen extends StatelessWidget {
                     itemBuilder: (_, index) {
                       final subCategory = subCategories[index];
 
-                      /// Fetch Category Products
+// Step 1: Check if id is empty or null
+                      if (subCategory.id.isEmpty) {
+                        print("Skipping sub-category with empty ID: ${subCategory.name}");
+                        return const Text("Invalid sub-category.");
+                      }
+
+// Continue if it's safe
                       return FutureBuilder(
                         future: controller.getCategoryProducts(categoryId: subCategory.id),
                         builder: (_, snapshot) {
@@ -63,7 +69,9 @@ class SubCategoriesScreen extends StatelessWidget {
                           if (widget != null) return widget;
 
                           /// Congratulations 🎊 Record found.
-                          final products = snapshot.data!;
+                          final products = snapshot.data ?? [];
+                          if (products.isEmpty) return Text("No products found.");
+
                           return Column(
                             children: [
                               /// Sub Category Heading

@@ -24,12 +24,12 @@ class PaymentDetail extends StatelessWidget {
           THeadingWithIcon(title: TTexts.paymentDetails.tr, icon: Iconsax.bank),
           const SizedBox(height: TSizes.spaceBtwItems),
 
-          buildRow("${TTexts.subTotal.tr} (${order.itemCount} items):", "\$${order.totalAmount}", context),
+          buildRow("${TTexts.subTotal.tr} (${order.itemCount} items):", "Rs ${order.totalAmount}", context),
 
-          buildRow(TTexts.deliveryFee.tr, "\$${order.shippingAmount}", context),
-          buildRow(TTexts.taxAmount.tr, "\$${order.taxAmount}", context),
+          buildRow(TTexts.deliveryFee.tr, "Rs ${order.shippingAmount}", context),
+          buildRow(TTexts.taxAmount.tr, "Rs ${order.taxAmount}", context),
           const Divider(thickness: 1.0),
-          buildRow(TTexts.total.tr, "\$${order.totalAmount}", context),
+          buildRow(TTexts.total.tr, "Rs ${order.totalAmount}", context),
           const SizedBox(height: TSizes.xs),
           buildRow(TTexts.paymentMethod.tr, TTexts.cashOnDelivery.tr, context),
         ],
