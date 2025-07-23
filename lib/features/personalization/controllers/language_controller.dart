@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:tstore_ecommerce_app/utils/constants/image_strings.dart';
+import 'package:hamro_dokan/utils/constants/image_strings.dart';
 
 class LanguageController extends GetxController {
   static LanguageController get instance => Get.find();

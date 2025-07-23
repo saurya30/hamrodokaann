@@ -12,7 +12,20 @@
           "package_name": "com.codingwitht.ecommerce.tstore_ecommerce_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "153126438486-0pupavc7l972i6cku2dmu60en1en1sdu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingwitht.ecommerce.tstore_ecommerce_app",
+            "certificate_hash": "b37eb86b4f83a876f3903dd8c981dc2e2aad3795"
+          }
+        },
+        {
+          "client_id": "153126438486-ivscf67sr24pur48uuauq9jjbvnh5n4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAHhy9oCcyAs45Hm0ld58g_PpSuMBZOMlY"
@@ -20,7 +33,99 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153126438486-ivscf67sr24pur48uuauq9jjbvnh5n4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "153126438486-1ahnr2s0ack30qqdo47iea3ebvodliak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codingwitht.ecommerce.tstoreEcommerceApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153126438486:android:65d9871404966b68f21df7",
+        "android_client_info": {
+          "package_name": "com.example.cwt_ecommerce_admin_panel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153126438486-ivscf67sr24pur48uuauq9jjbvnh5n4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHhy9oCcyAs45Hm0ld58g_PpSuMBZOMlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153126438486-ivscf67sr24pur48uuauq9jjbvnh5n4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "153126438486-1ahnr2s0ack30qqdo47iea3ebvodliak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codingwitht.ecommerce.tstoreEcommerceApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153126438486:android:ef61998e43741e7cf21df7",
+        "android_client_info": {
+          "package_name": "com.hamro.dokan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153126438486-ltk0cnn2n3n50lv85ioci5upnjgttj9m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hamro.dokan",
+            "certificate_hash": "b37eb86b4f83a876f3903dd8c981dc2e2aad3795"
+          }
+        },
+        {
+          "client_id": "153126438486-ivscf67sr24pur48uuauq9jjbvnh5n4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHhy9oCcyAs45Hm0ld58g_PpSuMBZOMlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153126438486-ivscf67sr24pur48uuauq9jjbvnh5n4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "153126438486-1ahnr2s0ack30qqdo47iea3ebvodliak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codingwitht.ecommerce.tstoreEcommerceApp"
+              }
+            }
+          ]
         }
       }
     }

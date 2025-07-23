@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:tstore_ecommerce_app/common/widgets/shimmers/shimmer.dart';
+import 'package:hamro_dokan/common/widgets/shimmers/shimmer.dart';
 
 class TBannerShimmer extends StatelessWidget {
   const TBannerShimmer({super.key});

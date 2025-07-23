@@ -12,8 +12,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
-        android:label="tstore_ecommerce_app"
+        android:label="Hamro Dokan"
         android:name="${applicationName}"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

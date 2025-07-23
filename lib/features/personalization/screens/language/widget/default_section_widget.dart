@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tstore_ecommerce_app/features/personalization/controllers/language_controller.dart';
+import 'package:hamro_dokan/features/personalization/controllers/language_controller.dart';
 
 import '../../../../../common/widgets/texts/section_heading.dart';
 import '../../../../../utils/constants/image_strings.dart';

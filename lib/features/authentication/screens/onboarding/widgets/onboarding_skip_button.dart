@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tstore_ecommerce_app/utils/constants/text_strings.dart';
+import 'package:hamro_dokan/utils/constants/text_strings.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/device/device_utility.dart';

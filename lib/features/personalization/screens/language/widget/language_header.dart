@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tstore_ecommerce_app/features/personalization/controllers/language_controller.dart';
+import 'package:hamro_dokan/features/personalization/controllers/language_controller.dart';
 
 import '../../../../../common/styles/spacing_styles.dart';
 import '../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
