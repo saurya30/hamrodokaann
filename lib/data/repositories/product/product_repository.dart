@@ -139,51 +139,57 @@ class ProductRepository extends GetxController {
     }
   }
 
-  Future<List<ProductModel>> searchProducts(String query, {String? categoryId, String? brandId, double? minPrice, double? maxPrice}) async {
+  Future<List<ProductModel>> searchProducts(
+      String query, {
+        String? categoryId,
+        String? brandId,
+        double? minPrice,
+        double? maxPrice,
+      }) async {
     try {
-      // Reference to the 'products' collection in Firestore
       CollectionReference productsCollection = FirebaseFirestore.instance.collection('Products');
 
-      // Start with a basic query to search for products where the name contains the query
       Query queryRef = productsCollection;
 
-      // Apply the search filter
+
       if (query.isNotEmpty) {
-        queryRef = queryRef.where('Title', isGreaterThanOrEqualTo: query).where('Title', isLessThanOrEqualTo: '$query\uf8ff');
+        queryRef = queryRef
+            .where('title', isGreaterThanOrEqualTo: query)
+            .where('title', isLessThanOrEqualTo: '$query\uf8ff');
       }
 
-      // Apply filters
+
       if (categoryId != null) {
-        queryRef = queryRef.where('CategoryId', isEqualTo: categoryId);
+        queryRef = queryRef.where('categoryIds', arrayContains: categoryId);
       }
+
 
       if (brandId != null) {
-        queryRef = queryRef.where('Brand.Id', isEqualTo: brandId);
+        queryRef = queryRef.where('brand.id', isEqualTo: brandId);
       }
 
+
       if (minPrice != null) {
-        queryRef = queryRef.where('Price', isGreaterThanOrEqualTo: minPrice);
+        queryRef = queryRef.where('price', isGreaterThanOrEqualTo: minPrice);
       }
 
       if (maxPrice != null) {
-        queryRef = queryRef.where('Price', isLessThanOrEqualTo: maxPrice);
+        queryRef = queryRef.where('price', isLessThanOrEqualTo: maxPrice);
       }
 
-      // Execute the query
-      QuerySnapshot querySnapshot = await queryRef.get();
 
-      // Map the documents to ProductModel objects
-      final products = querySnapshot.docs.map((doc) => ProductModel.fromQuerySnapshot(doc)).toList();
+      final querySnapshot = await queryRef.get();
 
-      return products;
-    } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code).message;
-    } on PlatformException catch (e) {
-      throw TPlatformException(e.code).message;
+
+      print("Search matched: ${querySnapshot.docs.length} items");
+
+      return querySnapshot.docs.map((doc) => ProductModel.fromQuerySnapshot(doc)).toList();
     } catch (e) {
-      throw TTexts.somethingWrongTryAgain.tr;
+      print("🔥 Search error: $e");
+      rethrow;
     }
   }
+
 
   /// Update any field in specific Collection
   Future<void> updateSingleField(String docId, Map<String, dynamic> json) async {

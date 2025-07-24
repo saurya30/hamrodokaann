@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:hamro_dokan/features/shop/controllers/search_controller.dart';
 
 import '../data/services/notifications/notification_service.dart';
 import '../features/authentication/controllers/otp_controller.dart';
@@ -35,5 +36,6 @@ class GeneralBindings extends Bindings {
     Get.put(LanguageController());
     Get.lazyPut(() => NotificationController(), fenix: true);
     Get.lazyPut(() => FavouriteController());
+    Get.lazyPut(() => TSearchController());
   }
 }

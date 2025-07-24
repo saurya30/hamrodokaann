@@ -35,18 +35,18 @@ class TSearchController extends GetxController {
       // Apply sorting
       switch (selectedSortingOption.value) {
         case 'Name':
-          // Sort by name
+        // Sort by name
           results.sort((a, b) => a.title.compareTo(b.title));
           break;
         case 'Lowest Price':
-          // Sort by price in ascending order
+        // Sort by price in ascending order
           results.sort((a, b) => a.price.compareTo(b.price));
           break;
         case 'Highest Price':
-          // Sort by price in descending order
+        // Sort by price in descending order
           results.sort((a, b) => b.price.compareTo(a.price));
           break;
-        // Add other sorting cases as needed
+      // Add other sorting cases as needed
       }
 
       // Update searchResults with sorted results

@@ -68,16 +68,16 @@ class SearchScreen extends StatelessWidget {
 
               /// Search
               Obx(
-                () => searchController.isLoading.value
+                    () => searchController.isLoading.value
                     ? const Center(child: CircularProgressIndicator())
                     :
-                    // Show search if not Empty
-                    searchController.searchResults.isNotEmpty
-                        ? TGridLayout(
-                            itemCount: searchController.searchResults.length,
-                            itemBuilder: (_, index) => TProductCardVertical(product: searchController.searchResults[index]),
-                          )
-                        : brandsAndCategories(context),
+                // Show search if not Empty
+                searchController.searchResults.isNotEmpty
+                    ? TGridLayout(
+                  itemCount: searchController.searchResults.length,
+                  itemBuilder: (_, index) => TProductCardVertical(product: searchController.searchResults[index]),
+                )
+                    : brandsAndCategories(context),
               ),
 
               const SizedBox(height: TSizes.spaceBtwSections),
@@ -100,7 +100,7 @@ class SearchScreen extends StatelessWidget {
 
         /// -- Brands
         Obx(
-          () {
+              () {
             // Check if categories are still loading
             if (brandController.isLoading.value) return const TCategoryShimmer();
 
@@ -108,18 +108,18 @@ class SearchScreen extends StatelessWidget {
             return Wrap(
               children: brandController.allBrands
                   .map((brand) => GestureDetector(
-                        onTap: () => Get.to(BrandScreen(brand: brand)),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: TSizes.md),
-                          child: TVerticalImageAndText(
-                            image: brand.imageURL,
-                            title: brand.name,
-                            isNetworkImage: true,
-                            textColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark,
-                            backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
-                          ),
-                        ),
-                      ))
+                onTap: () => Get.to(BrandScreen(brand: brand)),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: TSizes.md),
+                  child: TVerticalImageAndText(
+                    image: brand.imageURL,
+                    title: brand.name,
+                    isNetworkImage: true,
+                    textColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark,
+                    backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+                  ),
+                ),
+              ))
                   .toList(),
             );
           },
@@ -134,7 +134,7 @@ class SearchScreen extends StatelessWidget {
         /// It displays a shimmer loader while categories are being loaded, shows a message if no data is found,
         /// and renders a horizontal list of featured categories with images and text.
         Obx(
-          () {
+              () {
             // Check if categories are still loading
             if (categoryController.isLoading.value) return const TSearchCategoryShimmer();
 
@@ -153,7 +153,7 @@ class SearchScreen extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (_, index) => GestureDetector(
                   onTap: () => Get.to(
-                    () => AllProducts(
+                        () => AllProducts(
                       title: categories[index].name,
                       futureMethod: categoryController.getCategoryProducts(categoryId: categories[index].id),
                     ),
@@ -229,14 +229,14 @@ class SearchScreen extends StatelessWidget {
                   Expanded(
                     child: TextFormField(
                       onChanged: (value) => searchController.minPrice.value = double.parse(value),
-                      decoration: const InputDecoration(hintText: 'Rs Lowest'),
+                      decoration: const InputDecoration(hintText: '\$ Lowest'),
                     ),
                   ),
                   const SizedBox(width: TSizes.spaceBtwItems),
                   Expanded(
                     child: TextFormField(
                       onChanged: (value) => searchController.maxPrice.value = double.parse(value),
-                      decoration: const InputDecoration(hintText: 'Rs Highest'),
+                      decoration: const InputDecoration(hintText: '\$ Highest'),
                     ),
                   ),
                 ],
@@ -262,7 +262,7 @@ class SearchScreen extends StatelessWidget {
 
   Widget _buildSortingDropdown() {
     return Obx(
-      () => DropdownButton<String>(
+          () => DropdownButton<String>(
         value: searchController.selectedSortingOption.value,
         onChanged: (String? newValue) {
           if (newValue != null) {
